@@ -1059,13 +1059,6 @@ const initializeMap = (lat, lon) => {
     attribution: 'Map data &copy; <a href="https://openweathermap.org">OpenWeatherMap</a>'
   });
   
-  setTimeout(() => {
-    const owmControls = document.querySelectorAll('.leaflet-control-layers-toggle'); // Example selector
-    owmControls.forEach((control, index) => {
-        control.id = `owm-control-${index}`;
-        control.classList.add('custom-owm-control'); 
-    });
-  }, 500);
 
   const updateWeatherLayer = (layer) => {
     map.removeLayer(weatherLayer);
