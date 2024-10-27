@@ -1,6 +1,3 @@
-// Add details from comments to features documentation 
-
-// TODO:  it searches incorectly .... 
 const API_KEY = '61a98510dd070c045181ea694797486a' 
 const API_KEY_WEATHERAPI = '0f911882ef9d41089e7133434242210' 
 const searchBtn = document.getElementById('search-btn');
@@ -286,7 +283,6 @@ const fetchData = async (lat, lon) => {
         timezoneOffset = data.timezone
 
         displayWeatherData(data);
-        // fetchWeatherMap(lat, lon);
         initializeMap(lat, lon)
     } catch (error) {
         console.error("Error fetching weather data:", error);
@@ -908,8 +904,8 @@ const displayTemperatureGraph = (openMeteoTemps, weatherApiTemps) => {
 
   const currentHour = new Date().getHours();
   const labels = Array.from({ length: 24 }, (_, i) => {
-    const nextHour = (currentHour + i + 1) % 24; // Calculate next hour
-    return `${nextHour}:00`; // Create hour label
+    const nextHour = (currentHour + i + 1) % 24; 
+    return `${nextHour}:00`; 
   });
 
   temperatureChart = new Chart(canvas, {
@@ -966,7 +962,7 @@ const displayTemperatureGraph = (openMeteoTemps, weatherApiTemps) => {
 };
 
 
-// Add to favorite 
+// Add to favorite list
 let favoriteLocations = [];
 
 const displaySuggestions = (suggestions) => {
