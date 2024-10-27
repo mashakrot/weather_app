@@ -674,6 +674,11 @@ color: #ccc;
     margin: auto;
 }
 
+.show {
+    position: relative;
+    
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }

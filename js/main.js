@@ -300,7 +300,7 @@ const getUserLocation = (date) => {
             fetchDataHourlyForecast(lat, lon)
             fetchDataHourlyForecastSecond(lat, lon)
 
-            initializeMap(coord.lat, coord.lon);
+            initializeMap(lat, lon);
         },
         error => {
             console.error("Error fetching location:", error);
@@ -1066,14 +1066,18 @@ const initializeMap = (lat, lon) => {
   
   const weatherOptions = ['temp', 'precipitation', 'clouds', 'wind'];
   let currentLayer = 'temp';
+
+  const mapWrapper = document.getElementById('map-container')
+  mapWrapper.innerHTML = ''
   
   weatherOptions.forEach(layer => {
     const button = document.createElement('button');
+    button.className.add = 'show'
     button.innerText = `Show ${layer}`;
     button.onclick = () => {
       currentLayer = layer;
       updateWeatherLayer(layer);
     };
-    document.body.appendChild(button);
+    mapWrapper.appendChild(button);
   });
 }
