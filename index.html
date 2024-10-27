@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Main Page</title>
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- TODO: should I add want a navbar with cool weather event forecsat  -->
+        <h1>Weather App</h1>
+
+            <div class="container">
+                <div class="buttons-container">
+                    <div class="search-container-wrapper">
+
+                        <div id="location-btn">Use My Location</div>
+                        <div id="search-container">
+                            <input class="input-field" type="text" id="search-input" autocomplete="off" placeholder="search your city">
+                            <button id="search-btn">Search</button>
+                        </div>
+                    </div>
+
+                    <div class="temp-toggle-container">
+                        <button id="celsius-btn" class="temp-toggle active">°C</button>
+                        <button id="fahrenheit-btn" class="temp-toggle">°F</button>
+                        <button id="kelvin-btn" class="temp-toggle">K</button>
+                    </div>
+                </div>
+                
+                <h3 id="time-now"></h3>
+                <div class="sun-time">
+                    <p id="sunrise-time"></p>
+                    <p id="sunset-time"></p>
+                </div>
+                <div id="weather-info">
+                    <div class="weather-icon-container">
+                        <img src="images/clear-day.svg" alt=" clouds" id="weather-icon"/>
+                    </div>
+                     
+                     <h2>Your City</h2>
+                     <p id="temp"> __ °C</p>
+                </div>
+                
+                <div class="weather-details">
+                    <div id="details-feels-like">
+                        <p class="detail-text">Feels like</p>
+                    </div>
+                    <div id="details-speed">
+                        <p class="detail-text">Wind speed</p>
+                    </div>
+                    <div id="details-clouds">
+                        <p class="detail-text">Clouds level</p>
+                    </div>
+                    <div id="details-humidity">
+                        <p class="detail-text">Humidity</p>
+                    </div>
+                </div>
+            </div>
+
+        <div class="hourly-forecast-wrapper">
+            
+            <h2 class="hourly-forecast-title">Hourly Weather Forecast</h2>
+            <div id="hourly-forecast-container">
+                <div id="forecast" class="forecast"></div>
+            </div>
+        </div>
+        
+        
+        <!-- Write in report that you can scroll it  -->
+        <div class="forecast-container-wrapper">
+            <h2>5-Day Weather Forecast</h2>
+            <div id="forecast-container"></div>                        
+        </div>
+
+        
+        <canvas id="temperatureChart"></canvas>
+
+        <div id="search-container">
+            <button id="search-btn">Search</button>
+            <button id="show-temp">Show Temp</button>
+            <button id="show-precipitation">Show Precipitation</button>
+            <button id="show-clouds">Show Clouds</button>
+            <button id="show-wind">Show Wind</button>
+        </div>
+        <div id="map" style="height: 600px"></div>        
+          
+        
+    </div>  
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
